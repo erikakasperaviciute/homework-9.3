@@ -1,0 +1,162 @@
+body {
+	box-sizing: border-box;
+}
+
+div.container {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	height: calc (100vh+100px);
+	margin: 100px auto;
+}
+
+div.container div {
+	margin-bottom: 15px;
+}
+
+div.person1 {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	height: 150px;
+	width: 400px;
+	transition: 0.4s ease-in-out;
+}
+
+div.person2 {
+	position: relative;
+	display: flex;
+	height: 150px;
+	width: 400px;
+	flex-direction: row-reverse;
+	transition: 0.4s ease-in-out;
+}
+
+div.person1 .nuotrauka {
+	height: 80px;
+	width: 80px;
+	background-image: url(https://randomuser.me/api/portraits/women/51.jpg);
+	background-size: cover;
+	border-radius: 50%;
+	margin: 32px 30px;
+	margin-left: 10px;
+	z-index: 99;
+    cursor: pointer;
+}
+
+div.person2 .nuotrauka {
+	height: 80px;
+	width: 80px;
+	background-image: url(https://randomuser.me/api/portraits/women/44.jpg);
+	background-size: cover;
+	border-radius: 50%;
+	margin: 32px 30px;
+	margin-right: 10px;
+	z-index: 99;
+    cursor: pointer;
+}
+
+div.person1 .tekstas, div.person2 .tekstas {
+	display: flex;
+	align-items: center;
+	width: 240px;
+	height: 110px;
+	background-color: lightgrey;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px; 
+	border-top-right-radius: 20px;
+	margin-bottom: 15px; 
+
+}
+
+div.person1 .tekstas {
+	background-color: lightgray;
+    color: black;
+    padding: 15px;
+    font-size: 14px;
+}
+
+div.person2 .tekstas {
+	background-color: green;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 0px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+div.person1 .tekstas::before {
+	content: '';
+	position: absolute;
+	top: 63px;
+	left: 114px;
+	width: 20px;
+	height: 20px;
+	background-color: lightgray;
+	transform: rotate(45deg);
+    z-index: -10;
+}
+
+div.person2 .tekstas::before {
+	content: '';
+	position: absolute;
+	top: 63px;
+	left: 265px;
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	transform: rotate(45deg);
+    z-index: -10;
+}	
+
+div.person1:hover {
+	transform: translateX(15px);
+}
+
+div.person2:hover {
+	transform: translateX(-15px);
+}
+
+div.nuotrauka::before {
+	content: '';
+	position: absolute;
+	height: 80px;
+	width: 75px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: 0.3s ease-in-out;
+	opacity: 0;
+}
+
+div.nuotrauka:hover::before {
+	content: '';
+	opacity: 1;
+}
+
+div.person1 div.nuotrauka div.camera-icon {
+	position: absolute;
+	top: 57px;
+    left: 33px;
+    height: 30px;
+    width: 30px;
+	opacity: 0;
+	transition: 0.3s ease-in-out;
+}
+
+div.person2 div.nuotrauka div.camera-icon {
+	position: absolute;
+	top: 57px;
+    left: 338px;
+    height: 30px;
+    width: 30px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+div.person1 div.nuotrauka:hover div.camera-icon {
+    opacity: 1;
+}
+
+div.person2 div.nuotrauka:hover div.camera-icon {
+	opacity: 1;
+}
+
